@@ -1,6 +1,7 @@
 {
-  "name": "csv-simplified",
+  "name": "CSV-simplified",
   "version": "0.0.0",
+  "description": "A powerful CSV reader/editor",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -44,5 +45,13 @@
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conkytom/CSV-simplified"
+  },
+  "bugs": {
+    "url": "https://github.com/conkytom/CSV-simplified/issues"
+  },
+  "homepage": "https://github.com/conkytom/CSV-simplified#readme"
 }

@@ -23,9 +23,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/app/styles/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/libraries/angular.min.js",
+              "src/libraries/angular-ui-router.min.js", 
+              "src/libraries/jquery-3.3.1.min.js",
+              "src/libraries/bootstrap.min.js",
+              "src/libraries/papaparse.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -72,7 +78,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/app/styles/styles.css"
             ],
             "scripts": [],
             "assets": [
