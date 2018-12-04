@@ -25,8 +25,5 @@ window.onload = function() {
         reader.onerror = function() {
             alert('Unable to read ' + file.fileName);
         };  
-    
-    
-
     }
 }
