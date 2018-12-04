@@ -12,7 +12,9 @@ The tools that csv-simplified aims to create includes:
   - Merge: combine 2 or more CSVs that contain shared data
   - Find Duplicates: finds duplicate entries or values within the csv
   - Find Anamolies: finds entries that have more or fewer values than other entries, or are not the same data type
-  
+
+You can test out a working example [here](https://limitless-hamlet-92861.herokuapp.com/), and use a csv file from this repository's `test_csvs` folder.  
+
 # Contributing 
 If you are interested in contributing to csv-simplified you will need to [install Node.js and npm](https://www.npmjs.com/get-npm) and [install AngularJS](https://angularjs.org/). Fork the respository to your own github account and clone it to your local machine.  From there you should just need to change directory to `CSV-simplified` and run `npm start` set up a local serve and open it in your browser.
 
