@@ -13,3 +13,7 @@ The tools that csv-simplified aims to create includes:
   - Find Duplicates: finds duplicate entries or values within the csv
   - Find Anamolies: finds entries that have more or fewer values than other entries, or are not the same data type
   
+# Contributing 
+If you are interested in contributing to csv-simplified you will need to [install Node.js and npm](https://www.npmjs.com/get-npm) and [install AngularJS](https://angularjs.org/). Fork the respository to your own github account and clone it to your local machine.  From there you should just need to change directory to `CSV-simplified` and run `npm start` set up a local serve and open it in your browser.
+
+If this does not work for you please get in touch so that this section can be properly updated for future contributors.
