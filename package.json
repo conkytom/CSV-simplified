@@ -1,5 +1,5 @@
 {
-  "name": "CSV-simplified",
+  "name": "csv-simplified-web",
   "version": "0.0.0",
   "description": "A powerful CSV reader/editor",
   "scripts": {
@@ -21,7 +21,11 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "angular-route": "^1.7.3",
     "core-js": "^2.5.4",
+    "csv-simplified": "../csv-simplified",
+    "papaparse": "^4.6.0",
+    "polymer": "^0.5.0",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"
   },
@@ -48,10 +52,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/conkytom/CSV-simplified"
+    "url": "git+https://github.com/conkytom/csv-simplified"
   },
   "bugs": {
-    "url": "https://github.com/conkytom/CSV-simplified/issues"
+    "url": "https://github.com/conkytom/csv-simplified/issues"
   },
-  "homepage": "https://github.com/conkytom/CSV-simplified#readme"
+  "homepage": "https://github.com/conkytom/csv-simplified#readme"
 }
