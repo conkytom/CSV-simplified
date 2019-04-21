@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CSV-simplified';
+  title = 'csv-simplified';
+
+  // parse() {
+  //   alert('hey');
+  //   Papa.parse(fileInput.files[0], {
+  //     complete: function(results) {
+  //       console.log(results);
+  //     }
+  //   });
+  // }
+
 }
+

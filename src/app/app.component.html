@@ -1,20 +1,167 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    {{ title }}
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+  <div class="table-responsive">
+   <div align="center">
+<!--  https://codepen.io/anon/pen/eLaaXG using example from https://portalzine.de/dev/html5/importing-csv-files-with-html5-and-papa-parse/ 
+        WORKS-->
+<!--  https://codepen.io/anon/pen/EezzJE using example from https://www.joyofdata.de/blog/parsing-local-csv-file-with-javascript-papa-parse/
+        WORKS IF you add "console.log(data)" in the complete section of Papa.parse
+      Working on this example to make "parse" button do it's thing-->
+<!-- use example here: https://vaadin.com/blog/wcw-15-csv-parsing and here: https://vaadin.com/blog/using-vaadin-grid-with-csv
+        to adapt a method to display the rows-->
+<!-- https://codepen.io/anon/pen/bmpEGK 
+      10/3: currently does a lot, but assigns a header when there is not one
+      10/4: removed "header from papaparse options and it works
+          https://codepen.io/anon/pen/ReRpxZ 
+          need to break up front end and backend code
+          Can we assign types to columns as part of the the config in the 
+            more detailed section for selecting options?
+      10/9: like this option too https://codepen.io/anon/pen/JmWygV?editors=1011    
+          -->
+      <script>
+           document.getElementById('txtFileUpload').addEventListener('change', upload, false);
+
+function upload(evt) {
+
+   var data = null;
+   var file = evt.target.files[0];
+   var reader = new FileReader();
+   reader.readAsText(file);
+   reader.onload = function(event) {
+       var csvData = event.target.result;
+       var data = Papa.parse(csvData);
+
+       console.log(data.data);
+
+       var arrayLength = data.data.length;
+       console.log(arrayLength);
+       for (var i = 0; i < arrayLength; i++) {
+           console.log(data.data[i]);
+           $("#header").append("<li>" + JSON.stringify(data.data[i]) + "</li>");
+       }
+
+   };
+   reader.onerror = function() {
+       alert('Unable to read ' + file.fileName);
+   };  
+
+}
+        
+        </script>
+        
+          
+
+          <div class="row">
+            <div class="col-md-6">
+                <input type="file" name="File Upload" id="txtFileUpload" accept=".csv" />
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-primary" id="parse">Parse File</button>
+            </div>
+          </div>
+
+          <hr>
+          <!-- <div class="row">
+            <div class="col-md-12"> -->
+
+              <div class="row">
+                
+                  <div class="col-md-3">
+                      <div> Number of columns: <b id="no_of_columns"> n/a </b> </div> 
+                   </div>
+                  <div class="col-md-3">
+                    <div> Number of rows: <b id="no_of_rows"> n/a </b>  </div> 
+                  </div>
+
+                <div class="col-md-6">
+                    <label for="orderBy">Order By &nbsp;</label>
+                    <select name="orderBy" id="orderByColumns">
+                      
+                        <!-- Options will come here -->
+                      </select>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                  <!-- <div class="col-md-3">
+                      <div> Number of columns: <b id="no_of_columns"></b> </div> 
+                   </div>
+                  <div class="col-md-3">
+                    <div> Number of rows: <b id="no_of_rows"></b> </div> 
+                  </div> -->
+                <div class="col-md-2"> View Columns</div>
+                <div class="col-md-10 pull-left" id="checkColumnsDiv">
+                  n/a 
+                    <!-- <div class="checkbox-inline">
+                        <label> Option 1 <input type="checkbox" value="ngfgh"></label>
+                    </div>
+                      <div class="checkbox-inline">
+                        <label> Option 2 <input type="checkbox" value="ghgfh"></label>
+                      </div>
+                      <div class="checkbox-inline">
+                        <label> Option 3 <input type="checkbox" value="gh"></label>
+                      </div>                       -->
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-md-12">
+                  <h4> Data Columns</h4>           
+
+                  <table id="columns">
+                    <thead >
+                      <tr id="headColumns"></tr>
+                    </thead>
+                    <hr>
+                    <tbody id="bodyData">
+                      
+                    </tbody>
+
+                  </table>
+                  <!-- <div class="row">
+                   <div class="col-md-2">
+                       <div> Name: <b id="name"></b> </div> 
+                   </div>
+                   <div class="col-md-2">
+                       <div> Shift: <b id="shift"></b> </div> 
+                   </div>
+                   <div class="col-md-2">
+                       <div> Title: <b id="title"></b> </div> 
+                  </div>
+                </div> -->
+                  
+               </div>
+              </div>
+            <!-- </div>
+          </div> -->
+         
+         
+
+
+          <hr>
+
+          <div id="header"></div>
+<!-- Add a file_loaded boolean so that once the file has been chosen and 
+loaded a box with options and the parse button will appear -->
+
+<!-- Insert a box with all the parsing options we would like to add,
+or just have a "display all" option -->
+  <!-- ticking off certain options in this box will affect global variables
+  that can be applied to Papapares' parsing options and to csv_manager's -->
+  
+  <!-- 
+  
+  <button id="submit" ng-click="csv_manager.loadCSVFile(csv-file)">Parse</button>
+
+
+  -->
+
+   </div>
+  </div>
+ </div>
+
 
