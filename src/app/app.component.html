@@ -53,7 +53,97 @@ function upload(evt) {
         
         </script>
         
-          <input type="file" name="File Upload" id="txtFileUpload" accept=".csv" />
+          
+
+          <div class="row">
+            <div class="col-md-6">
+                <input type="file" name="File Upload" id="txtFileUpload" accept=".csv" />
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-primary" id="parse">Parse File</button>
+            </div>
+          </div>
+
+          <hr>
+          <!-- <div class="row">
+            <div class="col-md-12"> -->
+
+              <div class="row">
+                
+                  <div class="col-md-3">
+                      <div> Number of columns: <b id="no_of_columns"> n/a </b> </div> 
+                   </div>
+                  <div class="col-md-3">
+                    <div> Number of rows: <b id="no_of_rows"> n/a </b>  </div> 
+                  </div>
+
+                <div class="col-md-6">
+                    <label for="orderBy">Order By &nbsp;</label>
+                    <select name="orderBy" id="orderByColumns">
+                      
+                        <!-- Options will come here -->
+                      </select>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                  <!-- <div class="col-md-3">
+                      <div> Number of columns: <b id="no_of_columns"></b> </div> 
+                   </div>
+                  <div class="col-md-3">
+                    <div> Number of rows: <b id="no_of_rows"></b> </div> 
+                  </div> -->
+                <div class="col-md-2"> View Columns</div>
+                <div class="col-md-10 pull-left" id="checkColumnsDiv">
+                  n/a 
+                    <!-- <div class="checkbox-inline">
+                        <label> Option 1 <input type="checkbox" value="ngfgh"></label>
+                    </div>
+                      <div class="checkbox-inline">
+                        <label> Option 2 <input type="checkbox" value="ghgfh"></label>
+                      </div>
+                      <div class="checkbox-inline">
+                        <label> Option 3 <input type="checkbox" value="gh"></label>
+                      </div>                       -->
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-md-12">
+                  <h4> Data Columns</h4>           
+
+                  <table id="columns">
+                    <thead >
+                      <tr id="headColumns"></tr>
+                    </thead>
+                    <hr>
+                    <tbody id="bodyData">
+                      
+                    </tbody>
+
+                  </table>
+                  <!-- <div class="row">
+                   <div class="col-md-2">
+                       <div> Name: <b id="name"></b> </div> 
+                   </div>
+                   <div class="col-md-2">
+                       <div> Shift: <b id="shift"></b> </div> 
+                   </div>
+                   <div class="col-md-2">
+                       <div> Title: <b id="title"></b> </div> 
+                  </div>
+                </div> -->
+                  
+               </div>
+              </div>
+            <!-- </div>
+          </div> -->
+         
+         
+
+
+          <hr>
+
 
           <div id="header"></div>
 <!-- Add a file_loaded boolean so that once the file has been chosen and 
