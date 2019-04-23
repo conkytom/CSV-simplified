@@ -8,14 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'csv-simplified';
 
-  // parse() {
-  //   alert('hey');
-  //   Papa.parse(fileInput.files[0], {
-  //     complete: function(results) {
-  //       console.log(results);
-  //     }
-  //   });
-  // }
-
 }
 
